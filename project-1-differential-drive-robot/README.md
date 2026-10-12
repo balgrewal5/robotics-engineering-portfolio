@@ -13,3 +13,15 @@ During autonomous operation, the robot drives forward under closed-loop wheel-sp
 ## Demo
 
 ![Obstacle Avoidance Demo](media/obstacle-avoidance-demo.gif)
+
+## Key Features
+
+- Dual quadrature encoder feedback for left and right wheel motion
+- Independent PI wheel-speed control
+- Differential-drive kinematics
+- Encoder-based odometry estimating position and heading
+- HC-SR04 ultrasonic obstacle detection
+- MPU6050 accelerometer and gyroscope integration
+- Autonomous obstacle-response behaviour
+- Encoder-measured approximately 90° turning
+- Real-time serial monitoring of RPM, pose and sensor data
