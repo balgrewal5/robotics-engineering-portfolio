@@ -71,6 +71,7 @@ flowchart LR
     IMU --> MCU
     ENC_L --> MCU
     ENC_R --> MCU
+```
 
 ## Core Engineering
 
