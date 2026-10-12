@@ -49,3 +49,33 @@ During autonomous operation, the robot drives forward under closed-loop wheel-sp
 | PI speed target | 20 RPM |
 | Obstacle threshold | ~20 cm |
 | Avoidance turn | ~90° |
+
+## System Architecture
+
+```mermaid
+flowchart LR
+
+    US[HC-SR04<br/>Ultrasonic Sensor]
+    IMU[MPU6050<br/>Accelerometer + Gyroscope]
+    ENC_L[Left Wheel Encoder]
+    ENC_R[Right Wheel Encoder]
+
+    MCU[Arduino Uno<br/>Control + Odometry]
+
+    DRIVER[L298N<br/>Motor Driver]
+
+    LM[Left Motor]
+    RM[Right Motor]
+
+    US --> MCU
+    IMU --> MCU
+    ENC_L --> MCU
+    ENC_R --> MCU
+
+    MCU -->|PWM + Direction| DRIVER
+
+    DRIVER --> LM
+    DRIVER --> RM
+
+    LM --> ENC_L
+    RM --> ENC_R
