@@ -367,3 +367,18 @@ Future development could combine encoder odometry with MPU6050 inertial measurem
 
     LM --> ENC_L
     RM --> ENC_R
+
+## Future Improvements
+
+The current platform demonstrates closed-loop differential-drive control, encoder odometry, inertial sensing and reactive obstacle avoidance. Several upgrades would improve accuracy, robustness and autonomy.
+
+- Fuse wheel-encoder odometry with MPU6050 inertial measurements for improved heading estimation.
+- Replace the L298N with a more efficient modern motor driver to reduce voltage drop and improve power delivery.
+- Improve odometry calibration by experimentally identifying effective wheel radius and wheelbase.
+- Add better battery monitoring and regulated power distribution.
+- Integrate the robot with ROS 2.
+- Publish wheel odometry and IMU data as ROS 2 topics.
+- Add SLAM and localisation.
+- Add global and local path planning.
+- Upgrade obstacle avoidance from reactive behaviour to planned autonomous navigation.
+- Perform repeatable quantitative testing of distance error, heading error and controller response.
