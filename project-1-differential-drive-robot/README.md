@@ -185,6 +185,112 @@ $$
 (x,\ y,\ \theta)
 $$
 
+## Results & Testing
+
+### Encoder Calibration
+
+Both wheel encoders were manually calibrated by rotating each wheel through one full revolution.
+
+Measured values were approximately:
+
+- Left wheel: ~965 counts/revolution
+- Right wheel: ~969 counts/revolution
+
+A working encoder resolution of approximately:
+
+$$
+CPR \approx 960
+$$
+
+was therefore used for wheel-speed and odometry calculations.
+
+---
+
+### Wheel-Speed Measurement
+
+Encoder counts were converted into wheel speed in RPM and rad/s.
+
+During initial open-loop testing, both wheels reached approximately:
+
+- Left wheel: 38–39 RPM
+- Right wheel: 38–39 RPM
+
+The measured wheel angular velocity was approximately:
+
+$$
+\omega \approx 4.0\ \text{rad/s}
+$$
+
+---
+
+### Closed-Loop Wheel-Speed Control
+
+Independent PI controllers were implemented for the left and right motors.
+
+The target wheel speed was:
+
+$$
+RPM_{\text{target}} = 20\ RPM
+$$
+
+After tuning, both wheels operated close to the target speed with independent PWM adjustment.
+
+Typical measured values were approximately:
+
+| Target | Left Wheel | Right Wheel |
+|---|---:|---:|
+| 20 RPM | ~20–22 RPM | ~20–22 RPM |
+
+This demonstrated that encoder feedback could be used to regulate the two motors independently despite differences in motor behaviour.
+
+---
+
+### Odometry
+
+Encoder-based differential-drive odometry was used to estimate:
+
+- robot position $x$
+- robot position $y$
+- robot heading $\theta$
+
+During straight-line bench testing, both wheels operated at approximately 20 RPM while the estimated heading remained close to zero, demonstrating consistent forward-motion estimation.
+
+---
+
+### Obstacle Avoidance
+
+The HC-SR04 ultrasonic sensor continuously measured the distance in front of the robot.
+
+The obstacle threshold was set to approximately:
+
+$$
+20\ \text{cm}
+$$
+
+When an obstacle was detected, the robot:
+
+1. stopped
+2. executed an encoder-measured approximately 90° right turn
+3. stopped briefly
+4. continued driving forward
+
+The final autonomous floor test successfully demonstrated this complete behaviour.
+
+---
+
+### Final Demonstrated Behaviour
+
+**Drive forward → detect obstacle → stop → turn ~90° → continue driving**
+
+The final system combined:
+
+- encoder feedback
+- PI wheel-speed control
+- differential-drive odometry
+- ultrasonic obstacle sensing
+- MPU6050 inertial sensing
+- autonomous motion logic
+
     MCU -->|PWM + Direction| DRIVER
 
     DRIVER --> LM
