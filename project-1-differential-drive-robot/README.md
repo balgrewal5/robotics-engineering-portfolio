@@ -57,8 +57,8 @@ flowchart LR
 
     US[HC-SR04<br/>Ultrasonic Sensor]
     IMU[MPU6050<br/>Accelerometer + Gyroscope]
-    ENC_L[Left Wheel Encoder]
-    ENC_R[Right Wheel Encoder]
+    ENC_L[Left Wheel<br/>Encoder]
+    ENC_R[Right Wheel<br/>Encoder]
 
     MCU[Arduino Uno<br/>Control + Odometry]
 
@@ -71,13 +71,27 @@ flowchart LR
     IMU --> MCU
     ENC_L --> MCU
     ENC_R --> MCU
+
+    MCU -->|PWM + Direction| DRIVER
+
+    DRIVER --> LM
+    DRIVER --> RM
+
+    LM --> ENC_L
+    RM --> ENC_R
 ```
+
+The control flow is:
+
+**Sensors → Arduino → PI control / decision logic → motor driver → motors → encoder feedback**
+
+The Arduino continuously measures wheel motion, estimates odometry, maintains wheel speed using PI control, and reacts to obstacles detected by the ultrasonic sensor.
 
 ## Core Engineering
 
 ### Differential-Drive Kinematics
 
-For wheel radius \(r\), wheelbase \(L\), and left/right wheel angular velocities \(\omega_L\) and \(\omega_R\):
+For wheel radius $r$, wheelbase $L$, and left/right wheel angular velocities $\omega_L$ and $\omega_R$:
 
 $$
 v = \frac{r}{2}(\omega_R + \omega_L)
@@ -89,13 +103,13 @@ $$
 
 where:
 
-- \(v\) is the robot's linear velocity
-- \(\omega\) is the robot's angular velocity
+- $v$ is the robot's linear velocity
+- $\omega$ is the robot's angular velocity
 
 For this robot:
 
-- \(r = 0.0325\text{ m}\)
-- \(L = 0.13\text{ m}\)
+- $r = 0.0325\,\text{m}$
+- $L = 0.13\,\text{m}$
 
 ---
 
@@ -104,36 +118,40 @@ For this robot:
 Encoder counts are converted into wheel revolutions using:
 
 $$
-N_{rev} = \frac{N_{counts}}{CPR}
+N_{\text{rev}} = \frac{N_{\text{counts}}}{CPR}
 $$
 
-Wheel speed in RPM is then calculated from the number of revolutions measured over a sampling interval:
+Wheel speed in RPM is calculated over a sampling interval $\Delta t$:
 
 $$
-RPM = \frac{N_{rev}}{\Delta t} \times 60
+RPM = \frac{N_{\text{rev}}}{\Delta t} \times 60
 $$
 
 The measured encoder resolution was approximately:
 
 $$
-CPR \approx 960
+CPR \approx 960\ \text{counts/rev}
 $$
 
 ---
 
 ### PI Wheel-Speed Control
 
-Each wheel uses independent closed-loop PI control:
+Each wheel uses independent closed-loop PI control.
+
+The speed error is:
 
 $$
-e(t) = RPM_{target} - RPM_{measured}
+e(t) = RPM_{\text{target}} - RPM_{\text{measured}}
 $$
+
+The controller output is:
 
 $$
 u(t) = K_p e(t) + K_i \int e(t)\,dt
 $$
 
-The controller adjusts the PWM command independently for each motor so that both wheels maintain approximately the same target speed despite differences between the motors and load.
+The controller adjusts the PWM command independently for each motor so that both wheels maintain approximately the same target speed despite differences in motor behaviour and load.
 
 ---
 
@@ -149,17 +167,19 @@ $$
 \Delta s_R = r\Delta\phi_R
 $$
 
-Robot displacement and heading change are estimated using:
+The robot's centre displacement is:
 
 $$
 \Delta s = \frac{\Delta s_R + \Delta s_L}{2}
 $$
 
+The change in heading is:
+
 $$
 \Delta\theta = \frac{\Delta s_R - \Delta s_L}{L}
 $$
 
-The robot then updates its estimated planar pose:
+These values are integrated to estimate the robot's planar pose:
 
 $$
 (x,\ y,\ \theta)
