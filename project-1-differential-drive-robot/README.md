@@ -25,3 +25,27 @@ During autonomous operation, the robot drives forward under closed-loop wheel-sp
 - Autonomous obstacle-response behaviour
 - Encoder-measured approximately 90° turning
 - Real-time serial monitoring of RPM, pose and sensor data
+
+## Hardware
+
+- Arduino Uno R3
+- L298N dual H-bridge motor driver
+- 2 × geared DC motors with quadrature encoders
+- HC-SR04 ultrasonic distance sensor
+- MPU6050 accelerometer and gyroscope
+- 2-wheel differential-drive chassis with passive caster
+- 65 mm wheels
+- AA battery pack for motor power
+- Separate Arduino power supply for untethered operation
+
+## Robot Parameters
+
+| Parameter | Value |
+|---|---:|
+| Wheel diameter | 65 mm |
+| Wheel radius, \(r\) | 0.0325 m |
+| Wheelbase, \(L\) | 0.13 m |
+| Encoder resolution | ~960 counts/rev |
+| PI speed target | 20 RPM |
+| Obstacle threshold | ~20 cm |
+| Avoidance turn | ~90° |
