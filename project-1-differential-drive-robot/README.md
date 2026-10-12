@@ -72,6 +72,98 @@ flowchart LR
     ENC_L --> MCU
     ENC_R --> MCU
 
+## Core Engineering
+
+### Differential-Drive Kinematics
+
+For wheel radius \(r\), wheelbase \(L\), and left/right wheel angular velocities \(\omega_L\) and \(\omega_R\):
+
+$$
+v = \frac{r}{2}(\omega_R + \omega_L)
+$$
+
+$$
+\omega = \frac{r}{L}(\omega_R - \omega_L)
+$$
+
+where:
+
+- \(v\) is the robot's linear velocity
+- \(\omega\) is the robot's angular velocity
+
+For this robot:
+
+- \(r = 0.0325\text{ m}\)
+- \(L = 0.13\text{ m}\)
+
+---
+
+### Encoder-Based Wheel Speed
+
+Encoder counts are converted into wheel revolutions using:
+
+$$
+N_{rev} = \frac{N_{counts}}{CPR}
+$$
+
+Wheel speed in RPM is then calculated from the number of revolutions measured over a sampling interval:
+
+$$
+RPM = \frac{N_{rev}}{\Delta t} \times 60
+$$
+
+The measured encoder resolution was approximately:
+
+$$
+CPR \approx 960
+$$
+
+---
+
+### PI Wheel-Speed Control
+
+Each wheel uses independent closed-loop PI control:
+
+$$
+e(t) = RPM_{target} - RPM_{measured}
+$$
+
+$$
+u(t) = K_p e(t) + K_i \int e(t)\,dt
+$$
+
+The controller adjusts the PWM command independently for each motor so that both wheels maintain approximately the same target speed despite differences between the motors and load.
+
+---
+
+### Encoder Odometry
+
+Wheel encoder motion is converted into left and right wheel travel:
+
+$$
+\Delta s_L = r\Delta\phi_L
+$$
+
+$$
+\Delta s_R = r\Delta\phi_R
+$$
+
+Robot displacement and heading change are estimated using:
+
+$$
+\Delta s = \frac{\Delta s_R + \Delta s_L}{2}
+$$
+
+$$
+\Delta\theta = \frac{\Delta s_R - \Delta s_L}{L}
+$$
+
+The robot then updates its estimated planar pose:
+
+$$
+(x,\ y,\ \theta)
+$$
+
     MCU -->|PWM + Direction| DRIVER
 
     DRIVER --> LM
