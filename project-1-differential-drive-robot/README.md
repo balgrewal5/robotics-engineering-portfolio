@@ -296,5 +296,74 @@ The final system combined:
     DRIVER --> LM
     DRIVER --> RM
 
+## Engineering Challenges & Debugging
+
+### Motor Power Delivery
+
+During early dual-motor testing, one motor occasionally slowed or stalled when both motors were commanded simultaneously.
+
+The problem was traced primarily to weak batteries and insufficient available motor voltage/current under load. With degraded batteries, the PI controller saturated at the maximum PWM value while the motors were still unable to reach the requested speed.
+
+Replacing the batteries restored normal motor performance and gave the controller sufficient authority to regulate wheel speed.
+
+**Lesson:** control software cannot compensate for an actuator that has insufficient electrical power available.
+
+---
+
+### Motor Startup and Friction
+
+One motor initially exhibited inconsistent startup behaviour despite operating correctly when tested individually.
+
+The motor and gearbox showed some initial stiction, and manually rotating the wheel several times improved its behaviour.
+
+A short startup PWM boost was also used before transitioning to normal closed-loop control.
+
+---
+
+### Encoder Direction Conventions
+
+Because the left and right motors are mounted as mirrored assemblies, their encoder counts did not naturally use the same sign convention.
+
+During forward motion:
+
+- one encoder produced positive counts
+- the other produced negative counts
+
+The software therefore corrected the encoder signs so that forward wheel travel was treated consistently by the odometry calculations.
+
+---
+
+### Motor Direction and Differential Drive
+
+Initial testing showed that identical electrical direction commands caused the two physically mirrored motors to rotate in different robot directions.
+
+Each motor direction was therefore verified independently and the final motor-control convention was established so that both wheels produced physical forward motion when commanded forward.
+
+---
+
+### Wheel-Speed Mismatch
+
+Applying the same PWM value to both motors did not guarantee identical wheel speeds because real DC motors have manufacturing differences, friction and load variation.
+
+Independent PI wheel-speed controllers were therefore implemented using encoder feedback.
+
+This allowed each motor to receive a different PWM command while maintaining approximately the same requested wheel speed.
+
+---
+
+### Straight-Line Bias
+
+During the final floor test, the robot demonstrated a small directional bias.
+
+This highlighted the limitations of wheel-encoder odometry and real-world differential-drive systems, including:
+
+- wheel-speed mismatch
+- tyre and floor interaction
+- wheel-radius uncertainty
+- wheel slip
+- mechanical alignment
+
+Future development could combine encoder odometry with MPU6050 inertial measurements to improve heading estimation.
+
     LM --> ENC_L
     RM --> ENC_R
