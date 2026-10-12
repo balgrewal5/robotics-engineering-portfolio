@@ -382,3 +382,9 @@ The current platform demonstrates closed-loop differential-drive control, encode
 - Add global and local path planning.
 - Upgrade obstacle avoidance from reactive behaviour to planned autonomous navigation.
 - Perform repeatable quantitative testing of distance error, heading error and controller response.
+
+## Source Code
+
+The final integrated Arduino implementation is available here:
+
+[View final_robot.ino](src/final_robot.ino)
