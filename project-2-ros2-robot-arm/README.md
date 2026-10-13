@@ -69,6 +69,60 @@ flowchart TD
 
 ![Inverse Kinematics ROS 2 Node](media/ik-node-output.png)
 
+## How to Run the Demo
+
+After cloning the repository and building the `ros2_robot_arm` package, source the workspace:
+
+```bash
+cd ~/ros2_ws
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+```
+
+Launch the complete robot-arm simulation:
+
+```bash
+ros2 launch ros2_robot_arm arm_sim.launch.py
+```
+
+This starts the integrated simulation stack, including:
+
+- Gazebo
+- simulation clock bridge
+- robot state publisher
+- 2-DOF arm model
+- joint state broadcaster
+- joint trajectory controller
+- RViz
+
+Then open a second terminal, source the workspace again:
+
+```bash
+cd ~/ros2_ws
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+```
+
+Run the inverse-kinematics demo:
+
+```bash
+ros2 run ros2_robot_arm arm_ik_demo
+```
+
+The demo cycles through predefined Cartesian end-effector targets, calculates the corresponding joint angles using inverse kinematics, and sends the resulting joint trajectories to the `ros2_control` arm controller.
+
+The demo source code can be viewed at:
+
+```text
+src/arm_ik_demo.py
+```
+
+The integrated simulation launch file is located at:
+
+```text
+launch/arm_sim.launch.py
+```
+
 ## Results & Testing
 
 The complete system was successfully tested from a clean clone of the GitHub repository.
