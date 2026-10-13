@@ -63,9 +63,35 @@ flowchart TD
 
     H --> O["Gazebo Visualisation"]
 
-    L --> M["TF"]
+ ```
 
-    M --> N["RViz"]
+### IK Node Output
 
-    H --> O["Gazebo Visualisation"]
- 
+![Inverse Kinematics ROS 2 Node](media/ik-node-output.png)
+
+## Results & Testing
+
+The complete system was successfully tested from a clean clone of the GitHub repository.
+
+Key results:
+
+- ROS 2 package detected and built successfully using `colcon`
+- Complete simulation launched using a single ROS 2 launch command
+- Both `joint_state_broadcaster` and `arm_controller` activated successfully
+- Joint trajectories executed correctly in Gazebo
+- Gazebo and RViz remained synchronised through `/joint_states` and TF
+- Cartesian IK targets were converted successfully into joint-angle commands
+- The arm repeatedly reached the commanded IK configurations
+- Controller reference and feedback positions matched with errors close to numerical zero
+- `FollowJointTrajectory` action goals completed successfully
+- Controller activation/deactivation behaviour was deliberately tested and verified
+
+## Future Improvements
+
+- Expand the arm beyond 2 DOF
+- Add a gripper
+- Integrate MoveIt 2
+- Add collision-aware motion planning
+- Add camera-based object detection
+- Implement autonomous pick-and-place
+- Transfer the system to a physical robot arm
