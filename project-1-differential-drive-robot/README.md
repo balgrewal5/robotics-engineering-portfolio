@@ -291,10 +291,6 @@ The final system combined:
 - MPU6050 inertial sensing
 - autonomous motion logic
 
-    MCU -->|PWM + Direction| DRIVER
-
-    DRIVER --> LM
-    DRIVER --> RM
 
 ## Engineering Challenges & Debugging
 
@@ -365,8 +361,6 @@ This highlighted the limitations of wheel-encoder odometry and real-world differ
 
 Future development could combine encoder odometry with MPU6050 inertial measurements to improve heading estimation.
 
-    LM --> ENC_L
-    RM --> ENC_R
 
 ## Future Improvements
 
