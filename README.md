@@ -29,6 +29,18 @@ Autonomous differential-drive mobile robot featuring:
 
 ---
 
+## Project 2 — ROS 2 Robot Arm Kinematics, Simulation and Control
+
+Simulation-based 2-DOF robot arm using ROS 2, Gazebo, RViz and `ros2_control`, with forward/inverse kinematics, joint trajectory control and ROS 2 integration.
+
+![ROS 2 Robot Arm](project-2-ros2-robot-arm/media/project-2-gazebo-rviz.png)
+
+**Key skills:** ROS 2 · Gazebo · RViz · ros2_control · URDF · FK/IK · Jacobians · Trajectory Control
+
+### [View Full Project →](project-2-ros2-robot-arm/)
+
+---
+
 ## Portfolio Structure
 
 This portfolio will include:
