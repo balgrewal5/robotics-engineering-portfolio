@@ -29,7 +29,7 @@ Autonomous differential-drive mobile robot featuring:
 
 ---
 
-## Project 2 — ROS 2 Robot Arm Kinematics, Simulation and Control
+### 2. ROS 2 Robot Arm Kinematics, Simulation and Control
 
 Simulation-based 2-DOF robot arm using ROS 2, Gazebo, RViz and `ros2_control`, with forward/inverse kinematics, joint trajectory control and ROS 2 integration.
 
