@@ -96,6 +96,12 @@ The simulated robot was manually driven through an obstacle environment while RT
 
 **The SLAM demonstration is simulation-only and was not deployed on the physical robot.**
 
+### SLAM Implementation & Results
+
+[View the ROS 2, Gazebo and RTAB-Map implementation](slam-simulation/README.md)
+
+Includes the robot URDF, Gazebo world, saved occupancy map, and screenshots of the simulation and RViz mapping results.
+
 ## Results and Testing
 
 - Successfully executed YOLO11 Nano inference on the Raspberry Pi 5 at approximately 100–108 ms per inference during initial tests.
