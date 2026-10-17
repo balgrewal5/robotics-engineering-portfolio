@@ -41,6 +41,21 @@ Simulation-based 2-DOF robot arm using ROS 2, Gazebo, RViz and `ros2_control`, w
 
 ---
 
+### 3. Vision-Enabled Mobile Robot with YOLO Tracking & Visual SLAM
+
+![Vision-Enabled Mobile Robot](project-3-vision-enabled-mobile-robot/media/Vision_enabled_robot.jpg)
+
+Developed a physical vision-enabled robot using a Raspberry Pi 5, YOLO11 Nano and Arduino-based motor control. Implemented rotation-only object tracking, tested continuous and pulse-based steering, and integrated MPU-6050 gyroscope measurements.
+
+A separate ROS 2 Jazzy and Gazebo simulation demonstrates RGB-D visual SLAM using RTAB-Map.
+
+**Key skills:** Computer Vision · YOLO · Raspberry Pi · Arduino · Motor Control · ROS 2 · Gazebo · RTAB-Map
+
+[View Project →](project-3-vision-enabled-mobile-robot/)
+
+---
+---
+
 ## Portfolio Structure
 
 This portfolio will include:
