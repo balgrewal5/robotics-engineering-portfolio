@@ -135,6 +135,14 @@ Includes the robot URDF, Gazebo world, saved occupancy map, and screenshots of t
 - Greater onboard power independence and cable management
 - Extended navigation and autonomous mobile manipulation
 
-## Project Media and Source Code
+## Source Code
 
-Robot photographs, tracking demonstration, SLAM mapping results and implementation files will be organised within this project directory.
+### Physical Robot
+
+- [Continuous YOLO Tracking Controller](physical-robot/yolo_tracker_basic.py)
+- [Pulse-Based YOLO Tracking Controller](physical-robot/yolo_tracker.py)
+- [Arduino Motor Controller and MPU-6050 Interface](physical-robot/motor_controller.ino)
+
+### Visual SLAM Simulation
+
+- [ROS 2, Gazebo and RTAB-Map Implementation](slam-simulation/README.md)
