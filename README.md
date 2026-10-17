@@ -1,8 +1,9 @@
+
 # Robotics Engineering Portfolio
 
-A portfolio of robotics engineering projects covering embedded systems, control, ROS 2, perception, autonomous systems and robot integration.
+A collection of robotics engineering projects covering embedded systems, robot control, computer vision, ROS 2, simulation and autonomous systems.
 
-This repository contains selected projects developed through my robotics engineering roadmap and ROS 2 development work. Each project includes the engineering approach, system architecture, implementation, testing, results and source code.
+These projects demonstrate practical engineering skills developed through designing, programming, integrating and testing both physical and simulated robotic systems.
 
 ---
 
@@ -10,62 +11,42 @@ This repository contains selected projects developed through my robotics enginee
 
 ### 1. Encoder-Feedback Differential-Drive Mobile Robot
 
-![Differential-Drive Robot](project-1-differential-drive-robot/media/robot-overview.jpg)
+Designed and built a differential-drive mobile robot featuring independent PI wheel-speed control using quadrature encoder feedback. Implemented encoder-based odometry, ultrasonic obstacle avoidance and MPU-6050 sensing, with experimental testing of robot movement and turning accuracy.
 
-Autonomous differential-drive mobile robot featuring:
+![Differential-Drive Mobile Robot](project-1-differential-drive-robot/media/robot-overview.jpg)
 
-- Dual quadrature encoder feedback
-- Independent PI wheel-speed control
-- Differential-drive kinematics
-- Encoder-based odometry
-- HC-SR04 ultrasonic obstacle detection
-- MPU6050 accelerometer and gyroscope
-- Autonomous obstacle avoidance
-- Encoder-measured ~90° turning
+**Key Skills & Technologies:** Arduino · C++ · Embedded Systems · PI Control · Motor Drivers · Quadrature Encoders · Odometry · Sensor Integration
 
-**Technologies:** Arduino • C++ • Embedded Systems • Motor Control • Encoders • PI Control • Odometry • Sensor Integration
-
-[View Project →](project-1-differential-drive-robot/)
+[View Full Project →](project-1-differential-drive-robot/)
 
 ---
 
-### 2. ROS 2 Robot Arm Kinematics, Simulation and Control
+### 2. ROS 2 Robot Arm — Kinematics, Simulation & Control
 
-Simulation-based 2-DOF robot arm using ROS 2, Gazebo, RViz and `ros2_control`, with forward/inverse kinematics, joint trajectory control and ROS 2 integration.
+Developed a simulation-based 2-DOF robotic arm using ROS 2, Gazebo and RViz. Implemented forward and inverse kinematics, Jacobian-based analysis, joint trajectory control and `ros2_control` integration to simulate and control arm movement.
 
 ![ROS 2 Robot Arm](project-2-ros2-robot-arm/media/project-2-gazebo-rviz.png)
 
-**Key skills:** ROS 2 · Gazebo · RViz · ros2_control · URDF · FK/IK · Jacobians · Trajectory Control
+**Key Skills & Technologies:** ROS 2 · Python · Gazebo · RViz · URDF · Forward/Inverse Kinematics · Jacobians · ros2_control · Joint Trajectories
 
-### [View Full Project →](project-2-ros2-robot-arm/)
+[View Full Project →](project-2-ros2-robot-arm/)
 
 ---
 
-### 3. Vision-Enabled Mobile Robot with YOLO Tracking & Visual SLAM
+### 3. Vision-Enabled Mobile Robot — YOLO Tracking & Visual SLAM
+
+Built a vision-enabled mobile robot using a Raspberry Pi 5, YOLO11 Nano and Arduino Uno for real-time, rotation-only object tracking. Developed and tested continuous and pulse-based steering controllers, integrated MPU-6050 gyroscope measurements, and implemented a separate RGB-D visual SLAM simulation using ROS 2, Gazebo and RTAB-Map.
 
 ![Vision-Enabled Mobile Robot](project-3-vision-enabled-mobile-robot/media/Vision_enabled_robot.jpg)
 
-Developed a physical vision-enabled robot using a Raspberry Pi 5, YOLO11 Nano and Arduino-based motor control. Implemented rotation-only object tracking, tested continuous and pulse-based steering, and integrated MPU-6050 gyroscope measurements.
+**Key Skills & Technologies:** Python · OpenCV · YOLO11 · Raspberry Pi 5 · Arduino · Motor Control · Computer Vision · ROS 2 Jazzy · Gazebo · RTAB-Map
 
-A separate ROS 2 Jazzy and Gazebo simulation demonstrates RGB-D visual SLAM using RTAB-Map.
-
-**Key skills:** Computer Vision · YOLO · Raspberry Pi · Arduino · Motor Control · ROS 2 · Gazebo · RTAB-Map
-
-[View Project →](project-3-vision-enabled-mobile-robot/)
+[View Full Project →](project-3-vision-enabled-mobile-robot/)
 
 ---
----
 
-## Portfolio Structure
+## Portfolio Development
 
-This portfolio will include:
+This portfolio is being expanded with additional projects covering robot perception, autonomous navigation, manipulation, sensor fusion and advanced robotic control.
 
-- 4 major robotics engineering projects
-- 2–3 ROS 2 projects
-- Embedded systems and control
-- Robot perception
-- Mobile robotics
-- Manipulation
-- Autonomous robotics
-
-Each project is documented with source code, architecture, experimental results and engineering analysis.
+Each completed project includes implementation details, source code, system architecture, experimental results and engineering challenges.
