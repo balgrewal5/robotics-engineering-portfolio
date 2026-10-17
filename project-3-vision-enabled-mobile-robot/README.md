@@ -67,7 +67,9 @@ The robot determines the target's horizontal position relative to the centre of 
 - Target within deadband: stop
 - Target not detected: stop
 
-The controller uses short motor pulses followed by settling intervals to reduce oscillation caused by continuous rotation.
+Two visual tracking strategies were developed and tested: continuous rotation and pulse-based rotation. Continuous rotation provided faster responses but introduced overshooting and oscillation. Pulse-based control improved stability by alternating short motor movements with settling intervals. Both versions were retained for comparison.
+
+Demonstration: The embedded video shows the continuous-rotation controller. The pulse-based controller was developed separately to improve tracking stability and reduce overshooting.
 
 Final tested pulse-based settings:
 
