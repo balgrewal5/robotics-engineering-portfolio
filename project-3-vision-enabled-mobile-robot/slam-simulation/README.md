@@ -56,3 +56,10 @@ This SLAM implementation was performed entirely in simulation. The physical Rasp
 ## Files and Results
 
 The robot URDF, Gazebo world configuration, saved map and screenshots are provided in this directory.
+### Gazebo Simulation
+
+![Differential-drive robot in Gazebo obstacle course](gazebo_obstacle_course.png)
+
+### RTAB-Map Occupancy Mapping
+
+![RViz occupancy grid generated using RTAB-Map](rviz_slam_map.png)
