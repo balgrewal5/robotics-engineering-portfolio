@@ -1,4 +1,11 @@
 # Project 3 — Vision-Enabled Mobile Robot with YOLO Tracking & Visual SLAM
+## Robot Demonstration
+
+![Vision-Enabled Mobile Robot](media/Vision_enabled_robot.jpg)
+
+### YOLO Object-Tracking Demonstration
+
+https://github.com/user-attachments/assets/36475e6b-3180-4a19-a5e8-d6a8b657e0e8
 
 ## Overview
 
