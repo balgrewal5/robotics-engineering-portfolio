@@ -175,4 +175,8 @@ The demonstration validated the integrated automation sequence, although physica
 
 ## Demonstration
 
-[▶ Watch the UR5e Pick-and-Place Demo](media/project4_demo.mp4)
+
+
+https://github.com/user-attachments/assets/6bd1ae24-08c6-45e2-adf0-7a51926792d7
+
+
