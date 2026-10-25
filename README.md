@@ -45,6 +45,20 @@ Built a vision-enabled mobile robot using a Raspberry Pi 5, YOLO11 Nano and Ardu
 
 ---
 
+
+### 4. UR5e Pick-and-Place Automation with ROS 2 and MoveIt 2
+
+Developed an automated pick-and-place system using a simulated UR5e robotic manipulator in Webots. Integrated ROS 2 Jazzy, MoveIt 2 and ros2_control for motion planning, gripper operation and joint trajectory execution. Implemented five-stage waypoint automation, simulation-assisted object transfer and experimental validation of joint positioning accuracy.
+
+![UR5e Pick-and-Place Automation](project-4-ur5e-moveit2-pick-and-place/media/UR5e_showcase.png)
+
+**Key Skills & Technologies:** ROS 2 Jazzy · MoveIt 2 · Webots · Python · RViz · ros2_control · Robot Manipulation · Motion Planning · Trajectory Control
+
+[View Full Project →](project-4-ur5e-moveit2-pick-and-place)
+
+---
+
+
 ## Portfolio Development
 
 This portfolio is being expanded with additional projects covering robot perception, autonomous navigation, manipulation, sensor fusion and advanced robotic control.
