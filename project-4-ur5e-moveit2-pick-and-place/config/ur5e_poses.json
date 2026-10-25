@@ -1,0 +1,42 @@
+{
+  "approach": {
+    "shoulder_pan_joint": -0.6115337247372944,
+    "shoulder_lift_joint": -1.8089154279567035,
+    "elbow_joint": -1.934272118185142,
+    "wrist_1_joint": 5.362239610124237,
+    "wrist_2_joint": 1.5480511305418827,
+    "wrist_3_joint": -3.690831879266426
+  },
+  "grasp": {
+    "shoulder_pan_joint": -0.6153958677080134,
+    "shoulder_lift_joint": -1.9755228988652438,
+    "elbow_joint": -2.007911387980326,
+    "wrist_1_joint": 5.602614433701335,
+    "wrist_2_joint": 1.5482841558955043,
+    "wrist_3_joint": -3.6948609945992588
+  },
+  "lift": {
+    "shoulder_pan_joint": -0.6080456893125801,
+    "shoulder_lift_joint": -1.7094180217567028,
+    "elbow_joint": -1.8353969606401241,
+    "wrist_1_joint": 5.163767066962041,
+    "wrist_2_joint": 1.5478929637904901,
+    "wrist_3_joint": -3.68760341001358
+  },
+  "place": {
+    "shoulder_pan_joint": -0.7811129050539201,
+    "shoulder_lift_joint": -2.1548935217561938,
+    "elbow_joint": -1.7353691373066429,
+    "wrist_1_joint": 5.5124607941989705,
+    "wrist_2_joint": 1.5565622305455142,
+    "wrist_3_joint": -3.8605029020173145
+  },
+  "retreat": {
+    "shoulder_pan_joint": -0.7756665225111137,
+    "shoulder_lift_joint": -1.8698537179763992,
+    "elbow_joint": -1.4819434648788465,
+    "wrist_1_joint": 4.9738757817887524,
+    "wrist_2_joint": 1.5562480669756478,
+    "wrist_3_joint": -3.854916331533339
+  }
+}
