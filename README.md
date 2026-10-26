@@ -58,6 +58,17 @@ Developed an automated pick-and-place system using a simulated UR5e robotic mani
 
 ---
 
+### 5. PLC-Based Automated Conveyor Sorting System
+
+Developed a simulated industrial conveyor sorting system using CODESYS and IEC 61131-3 Ladder Logic. Implemented self-latching motor control, sensor-based sorting, a 500 ms TP pulse timer and CTU rejected-box counting. Designed and tested an interactive HMI for operator control, status monitoring and production counting.
+
+![PLC Conveyor Sorting HMI](project-5-plc-automated-conveyor-sorting-system/media/plc_conveyor_sorting_system.png)
+
+**Key Skills & Technologies:** CODESYS · PLC Programming · Ladder Logic · IEC 61131-3 · Motor Control · TP Timers · CTU Counters · HMI · Industrial Automation · Simulation
+
+[View Full Project →](project-5-plc-automated-conveyor-sorting-system/)
+
+---
 
 ## Portfolio Development
 
