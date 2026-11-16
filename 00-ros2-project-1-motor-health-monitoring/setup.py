@@ -19,8 +19,8 @@ setup(
     zip_safe=True,
     maintainer='baz',
     maintainer_email='balrajgrewal7777@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='ROS 2 motor health monitoring system using topics, parameters, QoS, services, launch files and testing.',
+    license='MIT',
     extras_require={
         'test': [
             'pytest',
