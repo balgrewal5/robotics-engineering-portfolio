@@ -1,13 +1,32 @@
-
 # Robotics Engineering Portfolio
 
-A collection of robotics engineering projects covering embedded systems, robot control, computer vision, ROS 2, simulation and autonomous systems.
+A portfolio of robotics and automation projects spanning ROS 2 software engineering, autonomous mobile robotics, robot control, computer vision, embedded systems, simulation, and industrial automation.
 
-These projects demonstrate practical engineering skills developed through designing, programming, integrating and testing both physical and simulated robotic systems.
+The projects demonstrate practical engineering experience across software development, system integration, testing, debugging, control, perception, and autonomous robotic systems.
 
 ---
 
-## Featured Projects
+## ROS 2 Software Engineering Projects
+
+### 1. ROS 2 Project 1 — Motor Health Monitoring System
+
+**ROS 2 Jazzy · Python · rclpy · QoS · Parameters · Services · Launch · Testing**
+
+Built a ROS 2 motor temperature monitoring system featuring publisher/subscriber communication, runtime-configurable parameters, custom QoS, a reset service, launch files, namespaces, topic remapping, logging, and automated testing.
+
+```bash
+ros2 param set /robot1/temperature_subscriber warning_threshold 50.0
+# Motor normal: 47.8 C
+
+ros2 service call /reset_warning_threshold std_srvs/srv/Trigger
+# MOTOR HOT: 47.8 C
+```
+
+[View Project →](./00-ros2-project-1-motor-health-monitoring)
+
+---
+
+## Robotics & Automation Projects
 
 ### 1. Encoder-Feedback Differential-Drive Mobile Robot
 
