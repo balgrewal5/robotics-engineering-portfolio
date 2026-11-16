@@ -8,7 +8,7 @@ The projects demonstrate practical engineering experience across software develo
 
 ## ROS 2 Software Engineering Projects
 
-### 1. ROS 2 Project 1 — Motor Health Monitoring System
+### ROS 2 Project 1 — Motor Health Monitoring System
 
 **ROS 2 Jazzy · Python · rclpy · QoS · Parameters · Services · Launch · Testing**
 
